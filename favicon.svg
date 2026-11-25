@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="12 4 176 192">
+  <defs>
+    <linearGradient id="iri" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d5fd1"/><stop offset="1" stop-color="#0f9d9a"/></linearGradient>
+    <linearGradient id="wing" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f9d9a"/><stop offset=".55" stop-color="#1d5fd1"/><stop offset="1" stop-color="#173f8a"/></linearGradient>
+  </defs>
+  <polygon points="100,8 180,54 180,146 100,192 20,146 20,54" fill="#ffffff" stroke="#0f1419" stroke-width="9" stroke-linejoin="round"/>
+  <g transform="translate(40,18) scale(0.8)">
+    <path d="M70,86 L85,93 L20,168 C16,169 12,166 12,162 Z" fill="#0f1419"/>
+    <path d="M147,39 L131,35 C127,30 120,28 113,30 C106,32 101,37 99,43 C91,47 84,52 77,60 C68,71 60,83 53,96 L66,92 L72,92 C77,97 85,100 93,100 C105,101 117,94 123,84 C129,76 132,66 133,56 C133,50 132,46 131,44 Z" fill="#0f1419"/>
+    <path d="M114,52 C118,60 121,67 125,74 C126,84 118,93 108,97 C98,100 88,98 80,93 L73,90 Z" fill="#ffffff" stroke="#0f1419" stroke-width="2.2"/>
+    <path d="M116,50 C106,53 96,58 86,64 C75,72 63,84 52,97 L60,95 C72,88 85,80 97,72 C105,66 111,59 116,50 Z" fill="url(#wing)"/>
+    <circle cx="122" cy="37" r="2.4" fill="#ffffff"/>
+  </g>
+</svg>

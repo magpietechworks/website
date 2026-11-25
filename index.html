@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magpie Techworks | Intelligent Engineering</title>
+<meta name="description" content="Magpie Techworks builds embedded systems, electronics, IoT and software, from idea to product. Based in Karnataka, India.">
+<meta property="og:title" content="Magpie Techworks">
+<meta property="og:description" content="Intelligent engineering: embedded systems, electronics, IoT and software, from idea to product.">
+<meta name="theme-color" content="#0f1419">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1419;
+    --ink-2: #3b4651;
+    --muted: #5d6973;
+    --blue: #1d5fd1;
+    --teal: #0f9d9a;
+    --bg: #ffffff;
+    --bg-soft: #f3f6f9;
+    --line: #e3e8ed;
+    --radius: 14px;
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px; line-height: 1.6;
+  }
+  a { color: inherit; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3, .brand { font-family: Montserrat, sans-serif; }
+
+  /* header */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand svg { width: 44px; height: 44px; flex: none; }
+  .brand-name { line-height: 1.05; }
+  .brand-name b { display: block; font-weight: 800; font-size: 19px; letter-spacing: .5px; }
+  .brand-name span { display: block; font-weight: 500; font-size: 10.5px; letter-spacing: 4.2px; color: var(--blue); }
+  .nav-links { display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; }
+  .nav-links a { text-decoration: none; color: var(--ink-2); }
+  .nav-links a:hover { color: var(--blue); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink); color: #fff !important; text-decoration: none;
+    padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: 15px;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn:hover { background: var(--blue); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--ink) !important; border: 1.5px solid var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: #fff !important; }
+
+  /* hero */
+  .hero { padding: 84px 0 72px; background:
+      radial-gradient(900px 400px at 85% 10%, rgba(29,95,209,.08), transparent 60%),
+      radial-gradient(700px 360px at 10% 90%, rgba(15,157,154,.08), transparent 60%); }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+  .eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--teal); background: rgba(15,157,154,.1); padding: 6px 12px; border-radius: 999px; margin-bottom: 18px;
+  }
+  h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.1; margin: 0 0 20px; font-weight: 800; letter-spacing: -.5px; }
+  h1 em { font-style: normal; background: linear-gradient(90deg, var(--blue), var(--teal)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { font-size: 19px; color: var(--ink-2); max-width: 560px; margin: 0 0 32px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-art { display: flex; justify-content: center; }
+  .hero-art svg { width: 100%; max-width: 380px; height: auto; filter: drop-shadow(0 20px 40px rgba(15,20,25,.12)); }
+
+  /* sections */
+  section { padding: 80px 0; }
+  .soft { background: var(--bg-soft); }
+  .section-head { max-width: 640px; margin-bottom: 44px; }
+  .section-head .kicker { font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); }
+  h2 { font-size: clamp(28px, 3.4vw, 38px); line-height: 1.2; margin: 8px 0 12px; font-weight: 800; }
+  .section-head p { color: var(--muted); margin: 0; font-size: 17px; }
+
+  /* services */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15,20,25,.08); border-color: transparent; }
+  .icon {
+    width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px;
+    background: linear-gradient(135deg, rgba(29,95,209,.12), rgba(15,157,154,.12));
+  }
+  .icon svg { width: 24px; height: 24px; stroke: var(--blue); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* values */
+  .values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .value { padding: 24px; border-radius: var(--radius); background: #fff; border: 1px solid var(--line); }
+  .value .num { font-family: Montserrat, sans-serif; font-weight: 800; font-size: 14px; color: var(--teal); letter-spacing: 1px; }
+  .value h3 { margin: 6px 0 6px; font-size: 19px; }
+  .value p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* story */
+  .story { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: center; }
+  .story-art {
+    background: var(--ink); border-radius: 24px; padding: 40px; display: grid; place-items: center; aspect-ratio: 1 / 1;
+  }
+  .story-art svg { width: 100%; max-width: 300px; height: auto; }
+  .story p { color: var(--ink-2); font-size: 17px; }
+  .facts { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+  .fact { font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--line); }
+
+  /* contact */
+  .contact {
+    background: var(--ink); color: #fff; border-radius: 24px; padding: 56px;
+    display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: center;
+    background-image: radial-gradient(600px 300px at 100% 0%, rgba(29,95,209,.35), transparent 60%),
+                      radial-gradient(500px 260px at 0% 100%, rgba(15,157,154,.3), transparent 60%);
+  }
+  .contact h2 { color: #fff; margin-top: 0; }
+  .contact p { color: #c7d0d8; margin: 0; font-size: 17px; }
+  .contact-list { display: grid; gap: 12px; }
+  .contact-item {
+    display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 12px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); text-decoration: none; color: #fff;
+    font-weight: 500; word-break: break-all;
+  }
+  .contact-item:hover { background: rgba(255,255,255,.14); }
+  .contact-item small { display: block; color: #9fb0bf; font-size: 12px; font-weight: 500; letter-spacing: .5px; text-transform: uppercase; }
+  .contact-item svg { width: 20px; height: 20px; flex: none; stroke: #5fd3cf; fill: none; stroke-width: 1.8; }
+
+  footer { padding: 32px 0 40px; color: var(--muted); font-size: 14px; }
+  .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 24px; }
+
+  /* responsive */
+  @media (max-width: 920px) {
+    .hero-grid, .story, .contact { grid-template-columns: 1fr; }
+    .hero-art { order: -1; }
+    .hero-art svg { max-width: 240px; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .values { grid-template-columns: repeat(2, 1fr); }
+    .story-art { max-width: 360px; }
+  }
+  @media (max-width: 640px) {
+    .nav-links a:not(.btn) { display: none; }
+    .hero { padding: 48px 0 56px; }
+    section { padding: 60px 0; }
+    .grid, .values { grid-template-columns: 1fr; }
+    .contact { padding: 32px 22px; border-radius: 18px; }
+    .lead { font-size: 17px; }
+    .brand-name span { letter-spacing: 3.2px; }
+    .hero-art svg { max-width: 190px; }
+  }
+  @media (max-width: 420px) {
+    .wrap { padding: 0 16px; }
+    .brand { gap: 8px; }
+    .brand svg { width: 36px; height: 36px; }
+    .brand-name b { font-size: 16px; }
+    .brand-name span { font-size: 9px; letter-spacing: 2.4px; }
+    .nav-links .btn { padding: 8px 14px; font-size: 14px; }
+  }
+  @media (max-width: 300px) {
+    .nav-links { display: none; }
+  }
+  .btn { white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<!-- Reusable logo definitions -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="iri" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d5fd1"/><stop offset="1" stop-color="#0f9d9a"/></linearGradient>
+    <linearGradient id="wing" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f9d9a"/><stop offset=".55" stop-color="#1d5fd1"/><stop offset="1" stop-color="#173f8a"/></linearGradient>
+    <g id="bird">
+      <path d="M70,86 L85,93 L20,168 C16,169 12,166 12,162 Z" fill="#0f1419"/>
+      <path d="M75,90 L81,93 L24,158 L20,157 Z" fill="url(#iri)" opacity="0.9"/>
+      <path d="M98,97 L100,104 M105,97 L106,104" stroke="#0f1419" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M96,104 H110" stroke="#0f1419" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M147,39 L131,35 C127,30 120,28 113,30 C106,32 101,37 99,43 C91,47 84,52 77,60 C68,71 60,83 53,96 L66,92 L72,92 C77,97 85,100 93,100 C105,101 117,94 123,84 C129,76 132,66 133,56 C133,50 132,46 131,44 Z" fill="#0f1419"/>
+      <path d="M114,52 C118,60 121,67 125,74 C126,84 118,93 108,97 C98,100 88,98 80,93 L73,90 Z" fill="#ffffff" stroke="#0f1419" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M115,44 C107,45 95,50 85,58 L90,61 C99,55 108,51 116,50 Z" fill="#ffffff"/>
+      <path d="M116,50 C106,53 96,58 86,64 C75,72 63,84 52,97 L60,95 C72,88 85,80 97,72 C105,66 111,59 116,50 Z" fill="url(#wing)"/>
+      <path d="M60,95 L52,97 L63,86 Z" fill="#0f1419"/>
+      <circle cx="122" cy="37" r="1.8" fill="#ffffff"/>
+    </g>
+    <g id="hexlogo">
+      <polygon points="100,8 180,54 180,146 100,192 20,146 20,54" fill="#ffffff" stroke="#0f1419" stroke-width="7" stroke-linejoin="round"/>
+      <polygon points="100,17 172,58.5 172,141.5 100,183 28,141.5 28,58.5" fill="none" stroke="url(#iri)" stroke-width="2.5" stroke-linejoin="round"/>
+      <g transform="translate(44,23) scale(0.76)"><use href="#bird"/></g>
+    </g>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Magpie Techworks home">
+      <svg viewBox="12 4 176 192" aria-hidden="true"><use href="#hexlogo"/></svg>
+      <div class="brand-name"><b>MAGPIE</b><span>TECHWORKS</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#values">Values</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Launching soon · Karnataka, India</span>
+        <h1>Intelligent engineering, <em>built with care.</em></h1>
+        <p class="lead">Magpie Techworks designs embedded systems, electronics and software, taking products from first idea to working hardware.</p>
+        <div class="cta">
+          <a class="btn" href="mailto:info@magpietechworks.com">Start a conversation
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn ghost" href="#services">What we do</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="12 4 176 192" role="img" aria-label="Magpie Techworks logo"><use href="#hexlogo"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="soft">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">What we do</span>
+        <h2>From silicon to software</h2>
+        <p>End-to-end product engineering for companies building connected, intelligent devices.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>
+          <h3>Embedded Systems &amp; Firmware</h3>
+          <p>Microcontroller firmware, RTOS, device drivers, bootloaders and embedded Linux.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h4v4H7zM15 8h2M15 12h2M7 16h10"/></svg></div>
+          <h3>Hardware &amp; PCB Design</h3>
+          <p>Schematics, PCB layout, prototyping, bring-up and hardware testing.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/><path d="M2 9a14 14 0 0 1 20 0"/></svg></div>
+          <h3>IoT &amp; Connected Devices</h3>
+          <p>Wireless connectivity, sensors, gateways and device-to-cloud communication.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg></div>
+          <h3>Software &amp; Cloud</h3>
+          <p>Applications, cloud backends, DevOps and CI/CD for reliable product delivery.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+          <h3>AI &amp; Edge Computing</h3>
+          <p>On-device intelligence and data processing close to where data is created.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg></div>
+          <h3>Product Engineering</h3>
+          <p>Concept, architecture, prototype and production support, all in one team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="values">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">What we stand for</span>
+        <h2>Our values</h2>
+        <p>Four commitments that guide every project we take on.</p>
+      </div>
+      <div class="values">
+        <div class="value"><div class="num">01</div><h3>Excellence</h3><p>Engineering done properly, the first time.</p></div>
+        <div class="value"><div class="num">02</div><h3>Quality</h3><p>Reliable designs, tested and documented.</p></div>
+        <div class="value"><div class="num">03</div><h3>Commitment</h3><p>Clear communication and promises kept.</p></div>
+        <div class="value"><div class="num">04</div><h3>Innovation</h3><p>Fresh ideas from curious, capable minds.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="soft">
+    <div class="wrap story">
+      <div class="story-art">
+        <svg viewBox="12 4 176 192" role="img" aria-label="Magpie Techworks emblem"><use href="#hexlogo"/></svg>
+      </div>
+      <div>
+        <span class="kicker" style="font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue)">Why the magpie</span>
+        <h2>Named after one of nature's smartest engineers</h2>
+        <p>The magpie is among the most intelligent birds on Earth. It solves problems, uses tools, recognises itself in a mirror, and builds strong domed nests with a roof.</p>
+        <p>That is the spirit of Magpie Techworks: curiosity, problem-solving and careful construction, applied to the devices and software our clients rely on.</p>
+        <div class="facts">
+          <span class="fact">Problem solvers</span>
+          <span class="fact">Builders</span>
+          <span class="fact">Always learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Have a product idea?</h2>
+          <p>Tell us what you are building. We will get back to you within two working days.</p>
+        </div>
+        <div class="contact-list">
+          <a class="contact-item" href="mailto:info@magpietechworks.com">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <div><small>Email</small>info@magpietechworks.com</div>
+          </a>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <div><small>Location</small>Karnataka, India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr">2026</span> Magpie Techworks. All rights reserved.</span>
+    <span>magpietechworks.com</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
